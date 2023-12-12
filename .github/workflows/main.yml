@@ -19,11 +19,10 @@ jobs:
           npm run build --if-present
         env:
           CI: true
-      - name: Install zip
-        uses: montudor/action-zip@v1
-      - name: Zip output
-        run: zip -qq -r ./bundle.zip index.js
-        working-directory: ./dist
+      - name: zip
+        uses: montudor/action-zip@v0.1.0
+        with:
+          args: zip -qq -r ./bundle.zip index.js node_modules
       - name: default deploy
         uses: appleboy/lambda-action@master
         with:
@@ -31,4 +30,4 @@ jobs:
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: eu-central-1
           function_name: aws-example-function
-          zip_file: dist/bundle.zip
+          zip_file: bundle.zip
