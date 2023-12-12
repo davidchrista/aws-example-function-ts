@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "lib": ["es2023"],
-    "target": "es2022",
-    "strict": true,
-    "preserveConstEnums": true,
-    "noEmit": true,
-    "sourceMap": false,
-    "module": "node16",
-    "moduleResolution": "node16",
+    "target": "es5",                          
+    "module": "commonjs",                    
+    "lib": ["es6"],                     
+    "allowJs": true,
+    "outDir": "dist",                          
+    "rootDir": "src",
+    "strict": true,         
+    "noImplicitAny": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true
-  },
-  "exclude": ["node_modules", "**/*.test.ts"]
+    "resolveJsonModule": true
+  }
 }
